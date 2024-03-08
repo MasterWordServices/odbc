@@ -44,12 +44,13 @@ library
     template-haskell,
     parsec,
     hashable,
-    attoparsec
+    attoparsec,
+    hs-opentelemetry-instrumentation-auto
 
 executable odbc
   hs-source-dirs:    app
   main-is:           Main.hs
-  ghc-options:       -Wall -O2 -threaded
+  ghc-options:       -Wall -O2 -threaded -fplugin AutoInstrument
   default-language:  Haskell2010
   build-depends:
     base >= 4.7 && < 5,
